@@ -1,0 +1,33 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :firstName %><br />
+  <%= f.text_field :firstName %></div>
+
+  <div><%= f.label :lastName %><br />
+  <%= f.text_field :lastName %></div>
+
+  <div><%= f.label :birth %><br />
+  <%= f.date_select :birth %></div>
+
+  <div><%= f.label :phone %><br />
+  <%= f.text_field :phone %></div>
+
+  <div><%= f.label :gender %><br />
+  <%= f.select :gender, options_for_select([ ['Masculino', 'M'], ['Feminino', 'F'] ])%></div>
+
+  <div><%= f.submit "Sign up" %></div>
+
+<% end %>
