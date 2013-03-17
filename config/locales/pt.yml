@@ -35,6 +35,7 @@ pt:
             email:
               blank: O e-mail é obrigatório
               taken: Esse e-mail já foi cadastrado
+              invalid: O e-mail informado é inválido
       full_messages:
         format: "%{message}"
   ja_tem_pedido_sendo_processado: Oh ow..você já tem um pedido sendo processado.
