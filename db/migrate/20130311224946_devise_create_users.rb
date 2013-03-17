@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :lastName,               :null => false, :default => ""
       t.string :gender,                 :null => false, :default => ""
       t.datetime :birth,                :null => false
-      t.boolean :isBeauty,              :null => false, :default => false
+      t.boolean :is_beauty,             :null => false, :default => false
       t.string :encrypted_password,     :null => false, :default => ""
 
       t.timestamps

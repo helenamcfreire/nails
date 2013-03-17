@@ -1,0 +1,31 @@
+<br/>
+<br/>
+
+<% if !@request.nil? && @request.errors.any? %>
+    <% @request.errors.full_messages.each do |msg| %>
+        <%= msg %><br />
+    <% end %>
+<% end %>
+
+<table border="1">
+        <tr>
+          <td><%=t :status %></td>
+          <td><%=t :endereco %></td>
+          <td><%=t :valor %></td>
+        </tr>
+    <% @requests.each do |r| %>
+        <tr>
+            <%= form_for :request, :url => {:controller => 'request', :action => 'approve', :id => r.id} do |form| %>
+                <td><%= r.statusAsText %></td>
+                <td><%= r.address %></td>
+                <% if r.status == 'A' || r.status == 'R'  %>
+                  <td><%= r.price %></td>
+                <% else %>
+                    <td><%= form.text_field :price %></td>
+                    <td><%= form.submit 'Aprovar' %></td>
+                    <td><%= link_to 'Recusar', {:controller => 'request', :action => 'reject', :id => r.id} %></td>
+                <% end %>
+            <% end %>
+        </tr>
+    <% end %>
+</table>

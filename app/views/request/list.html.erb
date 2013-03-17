@@ -1,0 +1,11 @@
+<%= render "nails/header" %>
+
+<% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<% if current_user.is_beauty? %>
+    <%= render "nails/beauty" %>
+<% else %>
+    <%= render "nails/client" %>
+<% end %>

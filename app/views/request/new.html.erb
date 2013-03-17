@@ -1,0 +1,27 @@
+<%= render "nails/header" %>
+
+<%= form_for @request, :url => {:action => 'create'} do |r| %>
+
+    <% if @request.errors.any? %>
+        <% @request.errors.full_messages.each do |msg| %>
+            <%= msg %><br />
+        <% end %>
+    <% end %>
+
+    <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+
+    <%=t :endereco %><br />
+    <%= r.text_field :address %>
+
+    <br/>
+    <br/>
+
+    <%=t :notificado_por %><br />
+    <%= r.radio_button :is_phone, false %><%=t :email %>
+    <%= r.radio_button :is_phone, true %><%=t :celular %>
+
+    <%= r.submit 'Done' %>
+
+<% end %>

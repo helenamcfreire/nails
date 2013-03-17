@@ -7,7 +7,7 @@ class CreateRequests < ActiveRecord::Migration
       t.string :address,                  :null => false, :default => ""
       t.string :price,                    :null => true,  :default => ""
       t.string :status,                   :null => true,  :default => ""
-      t.boolean :isPhone,                 :null => false, :default => false
+      t.boolean :is_phone,                :null => false, :default => false
 
       t.timestamps
     end

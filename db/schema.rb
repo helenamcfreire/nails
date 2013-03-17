@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20130316220852) do
     t.string   "address",    :default => "",    :null => false
     t.string   "price",      :default => ""
     t.string   "status",     :default => ""
-    t.boolean  "isPhone",    :default => false, :null => false
+    t.boolean  "is_phone",   :default => false, :null => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20130316220852) do
     t.string   "lastName",           :default => "",    :null => false
     t.string   "gender",             :default => "",    :null => false
     t.datetime "birth",                                 :null => false
-    t.boolean  "isBeauty",           :default => false, :null => false
+    t.boolean  "is_beauty",          :default => false, :null => false
     t.string   "encrypted_password", :default => "",    :null => false
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false

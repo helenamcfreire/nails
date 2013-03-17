@@ -9,8 +9,8 @@ ActiveAdmin.register User do
       f.input             :lastName
       f.input             :birth
       f.input             :phone
-      f.input             :gender,     :as => :select,      :collection => { 'Masculino' => 'M', 'Feminino' => 'F' }
-      f.input             :isBeauty,   :as => :radio,       :collection => { 'Yes' => true, 'No' => false }
+      f.input             :gender,      :as => :select,      :collection => { 'Masculino' => 'M', 'Feminino' => 'F' }
+      f.input             :is_beauty,   :as => :radio,       :collection => { 'Yes' => true, 'No' => false }
 
     end
     f.buttons

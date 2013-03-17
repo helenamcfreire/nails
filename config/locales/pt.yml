@@ -1,0 +1,324 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  errors:
+    format: ! '%{message}'
+    messages:
+      not_saved: O registro não foi salvo
+  activerecord:
+    errors:
+      models:
+        request:
+          attributes:
+            address:
+              blank: O endereço é obrigatório
+            status:
+              blank: O status é obrigatório
+            price:
+              not_a_number: O valor informado é inválido
+        user:
+          attributes:
+            firstName:
+              blank: O nome é obrigatório
+            lastName:
+              blank: O sobrenome é obrigatório
+            phone:
+              blank: O celular é obrigatório
+            gender:
+              blank: O sexo é obrigatório
+            birth:
+              blank: A data de nascimento é obrigatória
+            password:
+              blank: A senha é obrigatória
+              confirmation: A confirmação da senha é obrigatória
+            email:
+              blank: O e-mail é obrigatório
+              taken: Esse e-mail já foi cadastrado
+      full_messages:
+        format: "%{message}"
+  ja_tem_pedido_sendo_processado: Oh ow..você já tem um pedido sendo processado.
+  pedido_criado_sucesso: Seu pedido foi criado com sucesso.
+  pedido_aprovado_sucesso: Seu pedido foi aprovado com sucesso.
+  pedido_recusado_sucesso: Seu pedido foi recusado com sucesso.
+  faltou_informar_valor: Oh ow..você precisa informar um valor antes de aprovar.
+  notificado_por: Eu quero ser notificado por
+  quero_fazer_unha: Quero fazer a unha
+  email: E-mail
+  senha: Senha
+  confirmacao_senha: Confirmação de Senha
+  nome: Nome
+  sobrenome: Sobrenome
+  data_nascimento: Data de Nascimento
+  celular: Celular
+  sexo: Sexo
+  status: Status
+  endereco: Endereço
+  valor: Valor
+  registrar: Registrar
+  logar: Logar
+  sair: Sair
+  esqueceu_senha: Esqueceu sua senha?
+  nao_recebeu_instrucoes_confirmacao: Não recebeu as instruções de confirmação?
+  nao_recebeu_instrucoes_destravar: Não recebeu as instruções para destravar sua conta?
+  active_admin:
+    dashboard: Painel
+    dashboard_welcome:
+      welcome: "Bem-vindo ao Active Admin. Esse é o painel principal."
+      call_to_action: "Para adicionar seções ao painel, checkout 'app/admin/dashboard.rb'"
+    view: "Visualizar"
+    edit: "Editar"
+    delete: "Excluir"
+    delete_confirmation: "Tem certeza que deseja deletar esse registro?"
+    new_model: "Novo %{model}"
+    create_model: "Novo %{model}"
+    edit_model: "Edite %{model}"
+    update_model: "Edite %{model}"
+    delete_model: "Exclua %{model}"
+    details: "Detalhes do %{model}"
+    cancel: "Cancelar"
+    empty: "Vazio"
+    previous: "Anterior"
+    next: "Próximo"
+    download: "Download:"
+    has_many_new: "Adicionar novo %{model}"
+    has_many_delete: "Deletar"
+    filter: "Filtrar"
+    clear_filters: "Limpar Filtros"
+    search_field: "Buscar %{field}"
+    equal_to: "Igual a"
+    greater_than: "Maior que"
+    less_than: "Menor que"
+    main_content: "Please implement %{model}#main_content to display content."
+    logout: "Logout"
+    powered_by: "Powered by %{active_admin} %{version}"
+    sidebars:
+      filters: "Filters"
+    pagination:
+      empty: "No %{model} found"
+      one: "Displaying <b>1</b> %{model}"
+      one_page: "Displaying <b>all %{n}</b> %{model}"
+      multiple: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total"
+      entry:
+        one: "entry"
+        other: "entries"
+    any: "Any"
+    blank_slate:
+      content: "There are no %{resource_name} yet."
+      link: "Create one"
+    batch_actions:
+      button_label: "Batch Actions"
+      delete_confirmation: "Are you sure you want to delete these %{plural_model}? You won't be able to undo this."
+      succesfully_destroyed:
+        one: "Successfully destroyed 1 %{model}"
+        other: "Successfully destroyed %{count} %{plural_model}"
+      selection_toggle_explanation: "(Toggle Selection)"
+      link: "Create one"
+      action_label: "%{title} Selected"
+      labels:
+        destroy: "Delete"
+    comments:
+      body: "Body"
+      author: "Author"
+      title: "Comment"
+      add: "Add Comment"
+      resource: "Resource"
+      no_comments_yet: "No comments yet."
+      title_content: "Comments (%{count})"
+      errors:
+        empty_text: "Comment wasn't saved, text was empty."
+    devise:
+      sessions:
+        admin_user:
+          signed_in: Logado com sucesso!
+      failure:
+        admin_user:
+          unauthenticated: Autenticar
+      login:
+        title: "Login"
+        remember_me: "Remember me"
+        submit: "Login"
+      reset_password:
+        title: "Forgot your password?"
+        submit: "Reset My Password"
+      change_password:
+        title: "Change your password"
+        submit: "Change my password"
+      unlock:
+        title: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
+      links:
+        sign_in: "Sign in"
+        forgot_your_password: "Forgot your password?"
+    access_denied:
+      message: "You are not authorized to perform this action."
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %B'
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: ! '%{count} dias'
+      x_minutes:
+        one: 1 minuto
+        other: ! '%{count} minutos'
+      x_months:
+        one: 1 mês
+        other: ! '%{count} meses'
+      x_seconds:
+        one: 1 segundo
+        other: ! '%{count} segundos'
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%u %n'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: .
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: .
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: .
+    precision:
+      format:
+        delimiter: .
+  support:
+    array:
+      last_word_connector: ! ' e '
+      two_words_connector: ! ' e '
+      words_connector: ! ', '
+  time:
+    am: ''
+    formats:
+      default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
+      long: ! '%d de %B de %Y, %H:%M'
+      short: ! '%d de %B, %H:%M'
+    pm: ''

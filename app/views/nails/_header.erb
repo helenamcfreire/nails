@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+    <%= link_to t(:sair), destroy_user_session_path, :method => :delete %>
+    <%= current_user.email %>
+<% else %>
+    <%= link_to t(:logar), new_user_session_path %>
+<% end %>

@@ -1,33 +1,33 @@
-<h2>Sign up</h2>
+<h2><%=t :registrar %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%=t :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%=t :senha %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%=t :confirmacao_senha %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :firstName %><br />
-  <%= f.text_field :firstName %></div>
+  <div><%=t :nome %><br />
+  <%= f.text_field :firstName, :maxlength => 50 %></div>
 
-  <div><%= f.label :lastName %><br />
-  <%= f.text_field :lastName %></div>
+  <div><%=t :sobrenome %><br />
+  <%= f.text_field :lastName, :maxlength => 50 %></div>
 
-  <div><%= f.label :birth %><br />
-  <%= f.date_select :birth %></div>
+  <div><%=t :data_nascimento %><br />
+  <%= f.date_select :birth, :start_year => 1910, :include_blank => true, :order => [:day, :month, :year] %></div>
 
-  <div><%= f.label :phone %><br />
-  <%= f.text_field :phone %></div>
+  <div><%=t :celular %><br />
+  <%= f.text_field :phone, :maxlength => 15 %></div>
 
-  <div><%= f.label :gender %><br />
-  <%= f.select :gender, options_for_select([ ['Masculino', 'M'], ['Feminino', 'F'] ])%></div>
+  <div><%=t :sexo %><br />
+  <%= f.select :gender, options_for_select([ ['Masculino', 'M'], ['Feminino', 'F'] ]), :include_blank => true %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit t(:registrar) %></div>
 
 <% end %>

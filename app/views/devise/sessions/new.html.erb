@@ -1,16 +1,16 @@
-<h2>Sign in</h2>
+<h2><%=t :logar %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%=t :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%=t :senha %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div><%= f.submit t(:logar) %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>

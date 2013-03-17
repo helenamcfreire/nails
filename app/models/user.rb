@@ -6,7 +6,12 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation,
-                  :phone, :firstName, :lastName, :gender, :birth, :isBeauty
-  # attr_accessible :title, :body
+                  :phone, :firstName, :lastName, :gender, :birth, :is_beauty
+
+  validates :email, :password, :phone, :firstName, :lastName, :gender, :birth, :presence => true
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
+  validates :firstName, :lastName, :length => { :maximum => 50 }
+  validates :phone, :length => { :maximum => 15 }
+
 
 end
