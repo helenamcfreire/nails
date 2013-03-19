@@ -8,10 +8,6 @@
         <% end %>
     <% end %>
 
-    <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-
     <%=t :endereco %><br />
     <%= r.text_field :address %>
 

@@ -32,17 +32,16 @@ pt:
             password:
               blank: A senha é obrigatória
               confirmation: A confirmação da senha é obrigatória
+              too_short: A senha deve ter no mínimo 8 dígitos
             email:
               blank: O e-mail é obrigatório
               taken: Esse e-mail já foi cadastrado
               invalid: O e-mail informado é inválido
       full_messages:
         format: "%{message}"
-  ja_tem_pedido_sendo_processado: Oh ow..você já tem um pedido sendo processado.
   pedido_criado_sucesso: Seu pedido foi criado com sucesso.
   pedido_aprovado_sucesso: Seu pedido foi aprovado com sucesso.
   pedido_recusado_sucesso: Seu pedido foi recusado com sucesso.
-  faltou_informar_valor: Oh ow..você precisa informar um valor antes de aprovar.
   notificado_por: Eu quero ser notificado por
   quero_fazer_unha: Quero fazer a unha
   email: E-mail
