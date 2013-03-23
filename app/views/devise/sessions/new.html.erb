@@ -1,16 +1,47 @@
-<h2><%=t :logar %></h2>
+<div class="divFlores">
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <%= form_for(resource, :as => resource_name, :html => {:class => "form-horizontal"}, :url => session_path(resource_name)) do |f| %>
 
-  <%= devise_error_messages! %>
+      <%= devise_error_messages! %>
 
-  <div><%=t :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+      <div style="margin-top: 110px; width: 400px;">
 
-  <div><%=t :senha %><br />
-  <%= f.password_field :password %></div>
+        <div class="control-group">
+          <div class="logo_login">
+            <%= image_tag('logo_244x97.png') %>
+          </div>
+        </div>
 
-  <div><%= f.submit t(:logar) %></div>
-<% end %>
+        <div class="control-group">
+          <div class="controls">
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                <%= link_to t(:cadastre_se), new_registration_path(resource_name), :class => "floatRight" %><br />
+            <% end -%>
+          </div>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail"><%=t :email %>:</label>
+          <div class="controls">
+            <%= f.email_field :email, :autofocus => true %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="inputPassword"><%=t :senha %>:</label>
+          <div class="controls">
+            <%= f.password_field :password %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <%= f.submit t(:entrar), :class => "btn btn-warning floatRight" %>
+          </div>
+        </div>
+
+      </div>
+
+  <% end %>
+
+</div>

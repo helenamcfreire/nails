@@ -1,23 +1,62 @@
-<%= render "nails/header" %>
+<div class="divFlores">
 
-<%= form_for @request, :url => {:action => 'create'} do |r| %>
-
-    <% if @request.errors.any? %>
+  <div class="error-messages">
+    <% if !@request.nil? && @request.errors.any? %>
         <% @request.errors.full_messages.each do |msg| %>
-            <%= msg %><br />
+            <span class="label label-important"><%= msg %></span>
         <% end %>
     <% end %>
+  </div>
 
-    <%=t :endereco %><br />
-    <%= r.text_field :address %>
+  <%= form_for @request, :html => {:class => "form-horizontal"}, :url => {:action => 'create'} do |r| %>
 
-    <br/>
-    <br/>
+      <div style="width: 400px;">
 
-    <%=t :notificado_por %><br />
-    <%= r.radio_button :is_phone, false %><%=t :email %>
-    <%= r.radio_button :is_phone, true %><%=t :celular %>
+      <h4 style="margin-left: 90px; margin-top: 35px; margin-bottom: 44px;"><%=t :endereco_ser_atendida %></h4>
 
-    <%= r.submit 'Done' %>
+        <div class="control-group">
+          <label class="control-label" for="inputLocalidade"><%=t :localidade %>:</label>
+          <div class="controls">
+            <%= r.select :local_id, Local.all.collect {|l| [ l.name, l.id ] }, :include_blank => true %>
+          </div>
+        </div>
 
-<% end %>
+        <div class="control-group">
+          <label class="control-label" for="inputEndereco"><%=t :endereco %>:</label>
+          <div class="controls">
+            <%= r.text_field :address %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="inputNumero"><%=t :numero %>:</label>
+          <div class="controls">
+            <%= r.text_field :number, :style => 'width:38px' %>
+            <%=t :complemento %>:<%= r.text_field :complement, :style => 'width:93px' %>
+          </div>
+        </div>
+
+        <br />
+        <div class="control-group">
+          <div class="controls">
+            <span style="margin-left: 10px;"><%=t :notificado_por %>:</span>
+            <br />
+            <br />
+            <span><%= r.radio_button :is_phone, false %><%=t :email %></span>
+            <span style="margin-left: 41px;"><%= r.radio_button :is_phone, true %><%=t :celular %></span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <%= r.submit t(:ok), :class => "btn btn-warning floatRight" %>
+          </div>
+        </div>
+
+        <%= image_tag 'logo_147x58.png', :class => 'logo' %>
+
+      </div>
+
+  <% end %>
+
+</div>

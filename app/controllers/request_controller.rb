@@ -1,11 +1,17 @@
+require 'will_paginate/array'
+
 class RequestController < ApplicationController
+
+  before_filter :authenticate_user!
 
   def list
 
     if current_user.is_beauty?
       @requests = Request.all(:order => 'created_at DESC')
+                         .paginate(:page => params[:page], :per_page => 6)
     else
       @requests = Request.find_all_by_user_id(current_user.id, :order => 'created_at DESC')
+                         .paginate(:page => params[:page], :per_page => 6)
     end
 
   end
@@ -20,7 +26,7 @@ class RequestController < ApplicationController
     @request.status = Request::EM_PROCESSAMENTO
 
     if @request.save
-      redirect_to '/request/list', :notice => t(:pedido_criado_sucesso)
+      redirect_to '/request/list'
     else
       render('new')
     end
@@ -30,12 +36,14 @@ class RequestController < ApplicationController
   def approve
     @request = Request.find(params[:id])
     @request.price = params[:request][:price]
+    @request.payment = params[:request][:payment]
     @request.status = Request::APROVADO
 
     if @request.save
-      redirect_to '/request/list', :notice => t(:pedido_aprovado_sucesso)
+      redirect_to '/request/list'
     else
       @requests = Request.all(:order => 'created_at DESC')
+                         .paginate(:page => params[:page], :per_page => 6)
       render 'list'
     end
 
@@ -46,9 +54,10 @@ class RequestController < ApplicationController
     @request.status = Request::RECUSADO
 
     if @request.save
-      redirect_to '/request/list', :notice => t(:pedido_recusado_sucesso)
+      redirect_to '/request/list'
     else
       @requests = Request.all(:order => 'created_at DESC')
+                         .paginate(:page => params[:page], :per_page => 6)
       render 'list'
     end
 

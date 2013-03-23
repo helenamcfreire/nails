@@ -27,6 +27,7 @@
     <orderEntry type="library" scope="PROVIDED" name="arbre (v1.0.1, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v3.0.2, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v0.0.9, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bourbon (v3.1.1, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.2.2, ruby-1.9.3-p327) [gem]" level="application" />
@@ -72,6 +73,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.37, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v1.3.0, ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.1, ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.0.4, ruby-1.9.3-p327) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

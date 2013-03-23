@@ -10,5 +10,61 @@
  *
  *= require_self
  *= require jquery-ui-1.10.2.custom
+ *= require bootstrap
  *= require_tree .
  */
+
+.floatRight {float: right;}
+
+body {
+    background-color: #F58634!important;
+}
+
+.divFlores {
+    background: #ffffff url('/assets/flores.png') no-repeat right!important;
+    width: 820px!important;
+    height: 542px!important;
+    border-radius: 0px 46px 46px 46px!important;
+    border: 2px solid #d7e6eb!important;
+    margin: 64px 228px 64px 211px!important;
+}
+
+.logo_login {
+    margin-left: 118px!important;
+}
+
+input[type="radio"] {
+    vertical-align: middle!important;
+    margin-top: -4px!important;
+    margin-right: 10px!important;
+}
+
+.tableStatus {
+    width: 607px!important;
+    margin-left: 108px!important;
+}
+
+.btnSolicitacao {
+    margin-top: 50px!important;
+    margin-left: 319px!important;
+    margin-bottom: 28px!important;
+}
+
+table thead {
+    background-color: #E6E7E8!important;
+}
+
+table tbody {
+    background-color: #FEFEFE!important;
+}
+
+.error-messages {
+    margin-left: 10px!important;
+    margin-top: 10px!important;
+}
+
+img.logo {
+    position: absolute;
+    top: 515px;
+    left: 270px;
+}

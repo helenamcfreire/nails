@@ -2,6 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 pt:
+  will_paginate:
+    previous_label: Anterior
+    next_label: Próxima
   errors:
     format: ! '%{message}'
     messages:
@@ -13,9 +16,22 @@ pt:
           attributes:
             address:
               blank: O endereço é obrigatório
+            number:
+              blank: O número é obrigatório
+            complement:
+              blank: O complemento é obrigatório
+            payment:
+              blank: A forma de pagamento é obrigatória
             status:
               blank: O status é obrigatório
+            is_phone:
+              blank: Como você quer ser notificado?
+            user_id:
+              blank: O cliente é obrigatório
+            local_id:
+              blank: O local é obrigatório
             price:
+              blank: O valor é obrigatório
               not_a_number: O valor informado é inválido
         user:
           attributes:
@@ -42,22 +58,42 @@ pt:
   pedido_criado_sucesso: Seu pedido foi criado com sucesso.
   pedido_aprovado_sucesso: Seu pedido foi aprovado com sucesso.
   pedido_recusado_sucesso: Seu pedido foi recusado com sucesso.
-  notificado_por: Eu quero ser notificado por
-  quero_fazer_unha: Quero fazer a unha
+  notificado_por: Quero ser notificado por
+  ja_tem_pedido_sendo_processado: Ops..Você já tem um pedido sendo processado
+  processamento: Processamento
+  aprovado: Aprovado
+  recusado: Recusado
+  em_dinheiro: Em Dinheiro
+  cartao: Cartão
+  nova_solicitacao: NOVA SOLICITAÇÃO
+  money: R$
+  nothing: ------
   email: E-mail
   senha: Senha
-  confirmacao_senha: Confirmação de Senha
+  confirmacao_senha: Conf. Senha
   nome: Nome
   sobrenome: Sobrenome
-  data_nascimento: Data de Nascimento
+  data_nascimento: Data Nasc.
   celular: Celular
   sexo: Sexo
   status: Status
   endereco: Endereço
+  numero: Número
+  pagamento: Pagamento
+  complemento: Compto.
   valor: Valor
-  registrar: Registrar
-  logar: Logar
+  pagamento: Pagamento
+  localidade: Localidade
+  cadastro: CADASTRO
+  pedidos: PEDIDOS
+  ok: OK
+  endereco_ser_atendida: Em qual endereço deseja ser atendida?
+  cadastre_se: Cadastre-se
+  masculino: Masculino
+  feminino: Feminino
+  entrar: Entrar
   sair: Sair
+  confirmar: Confirmar
   esqueceu_senha: Esqueceu sua senha?
   nao_recebeu_instrucoes_confirmacao: Não recebeu as instruções de confirmação?
   nao_recebeu_instrucoes_destravar: Não recebeu as instruções para destravar sua conta?

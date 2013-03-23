@@ -1,33 +1,79 @@
-<h2><%=t :registrar %></h2>
+<div class="divFlores">
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, :as => resource_name, :html => {:class => "form-horizontal"}, :url => registration_path(resource_name)) do |f| %>
 
-  <%= devise_error_messages! %>
+      <%= devise_error_messages! %>
 
-  <div><%=t :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+      <div style="margin-top: 23px; width: 401px;">
 
-  <div><%=t :senha %><br />
-  <%= f.password_field :password %></div>
+        <h4 style="margin-left: 232px;"><%=t :cadastro %></h4>
 
-  <div><%=t :confirmacao_senha %><br />
-  <%= f.password_field :password_confirmation %></div>
+        <div class="control-group">
+          <label class="control-label" for="inputSenha"><%=t :nome %>:</label>
+          <div class="controls">
+            <%= f.text_field :firstName, :maxlength => 50 %>
+          </div>
+        </div>
 
-  <div><%=t :nome %><br />
-  <%= f.text_field :firstName, :maxlength => 50 %></div>
+        <div class="control-group">
+          <label class="control-label" for="inputSenha"><%=t :sobrenome %>:</label>
+          <div class="controls">
+            <%= f.text_field :lastName, :maxlength => 50 %>
+          </div>
+        </div>
 
-  <div><%=t :sobrenome %><br />
-  <%= f.text_field :lastName, :maxlength => 50 %></div>
+        <div class="control-group">
+          <label class="control-label" for="inputSenha"><%=t :data_nascimento %>:</label>
+          <div class="controls">
+            <%= f.date_select :birth, {:start_year => 1910, :include_blank => true, :order => [:day, :month, :year]}, {:style => "width:71px"} %>
+          </div>
+        </div>
 
-  <div><%=t :data_nascimento %><br />
-  <%= f.date_select :birth, :start_year => 1910, :include_blank => true, :order => [:day, :month, :year] %></div>
+        <div class="control-group">
+          <div class="controls">
+            <span><%= f.radio_button :gender, 'M' %><%=t :masculino %></span>
+            <span style="margin-left: 50px;"><%= f.radio_button :gender, 'F' %><%=t :feminino %></span>
+          </div>
+        </div>
 
-  <div><%=t :celular %><br />
-  <%= f.text_field :phone, :maxlength => 15 %></div>
+        <div class="control-group">
+          <label class="control-label" for="inputSenha"><%=t :celular %>:</label>
+          <div class="controls">
+            <%= f.text_field :phone, :maxlength => 15 %>
+          </div>
+        </div>
 
-  <div><%=t :sexo %><br />
-  <%= f.select :gender, options_for_select([ ['Masculino', 'M'], ['Feminino', 'F'] ]), :include_blank => true %></div>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail"><%=t :email %>:</label>
+          <div class="controls">
+            <%= f.email_field :email, :autofocus => true %>
+          </div>
+        </div>
 
-  <div><%= f.submit t(:registrar) %></div>
+        <div class="control-group">
+          <label class="control-label" for="inputSenha"><%=t :senha %>:</label>
+          <div class="controls">
+            <%= f.password_field :password %>
+          </div>
+        </div>
 
-<% end %>
+        <div class="control-group">
+          <label class="control-label" for="inputSenha"><%=t :confirmacao_senha %>:</label>
+          <div class="controls">
+            <%= f.password_field :password_confirmation %>
+          </div>
+        </div>
+
+        <div class="control-group" style="margin-left: 50px;">
+          <div class="controls">
+            <%= f.submit t(:confirmar), :class => "btn btn-warning floatRight" %>
+          </div>
+        </div>
+
+      </div>
+
+      <%= image_tag 'logo_147x58.png', :class => 'logo' %>
+
+  <% end %>
+
+</div>

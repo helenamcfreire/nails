@@ -1,22 +1,38 @@
-<br/>
-<br/>
+<div class="divFlores">
 
-<%= link_to t(:quero_fazer_unha), {:controller => 'request', :action => 'new'} %>
+  <%= link_to t(:nova_solicitacao), {:controller => 'request', :action => 'new'}, :class => "btn btn-warning btnSolicitacao" %>
 
-<br/>
-<br/>
+  <% if @requests.any? %>
+      <table class="table tableStatus">
+        <thead>
+        <tr>
+          <th style="width: 151px;"><%=t :status %></th>
+          <th style="width: 400px;"><%=t :endereco %></th>
+          <th style="width: 90px;"><%=t :valor %></th>
+          <th style="width: 90px;"><%=t :pagamento %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @requests.each do |r| %>
+            <tr>
+              <td><%= r.statusAsText %></td>
+              <td><%= r.address %>,&nbsp;<%= r.number %>&nbsp;/&nbsp;<%= r.complement %></td>
+              <td>
+                <% if !r.price.blank? %>
+                    <%=t :money %>&nbsp;
+                <% else %>
+                    <%=t :nothing %>
+                <% end %>
+                <%= r.price %>
+              </td>
+              <td><%= r.paymentAsText %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div style="margin-left: 108px;"><%= will_paginate @requests %></div>
+  <% end %>
 
-<table border="1">
-      <tr>
-        <td><%=t :status %></td>
-        <td><%=t :endereco %></td>
-        <td><%=t :valor %></td>
-      </tr>
-    <% @requests.each do |r| %>
-      <tr>
-        <td><%= r.statusAsText %></td>
-        <td><%= r.address %></td>
-        <td><%= r.price %></td>
-      </tr>
-    <% end %>
-</table>
+  <%= image_tag 'logo_147x58.png', :class => 'logo' %>
+
+</div>

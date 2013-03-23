@@ -11,6 +11,12 @@ gem 'devise'
 
 gem 'activeadmin'
 
+#Pagination
+gem 'will_paginate'
+
+#Pagination styling conventions in Twitter's Bootstrap toolkit
+gem 'bootstrap-will_paginate'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
