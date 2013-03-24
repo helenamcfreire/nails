@@ -26,7 +26,8 @@ body {
     height: 542px!important;
     border-radius: 0px 46px 46px 46px!important;
     border: 2px solid #d7e6eb!important;
-    margin: 64px 228px 64px 211px!important;
+    margin: auto!important;
+    margin-top: 64px!important;
 }
 
 .logo_login {
