@@ -53,15 +53,15 @@ ActiveRecord::Schema.define(:version => 20130322025726) do
   create_table "requests", :force => true do |t|
     t.integer  "user_id"
     t.integer  "local_id"
-    t.string   "address",    :default => "",    :null => false
-    t.string   "number",     :default => "",    :null => false
-    t.string   "complement", :default => "",    :null => false
-    t.string   "price",      :default => ""
-    t.string   "status",     :default => ""
-    t.string   "payment",    :default => ""
-    t.boolean  "is_phone",   :default => false, :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "address",                                  :default => "",    :null => false
+    t.string   "number",                                   :default => "",    :null => false
+    t.string   "complement",                               :default => "",    :null => false
+    t.decimal  "price",      :precision => 4, :scale => 2
+    t.string   "status",                                   :default => ""
+    t.string   "payment",                                  :default => ""
+    t.boolean  "is_phone",                                 :default => false, :null => false
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
   end
 
   create_table "users", :force => true do |t|

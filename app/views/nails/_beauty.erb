@@ -1,14 +1,14 @@
 <div class="divFlores">
 
   <div class="error-messages">
-      <% if !@request.nil? && @request.errors.any? %>
-          <% @request.errors.full_messages.each do |msg| %>
+      <% if flash[:error] %>
+          <% flash[:error].each do |msg| %>
                 <span class="label label-important"><%= msg %></span>
           <% end %>
       <% end %>
   </div>
 
-  <h4 style="margin-left: 369px; margin-top: 50px; margin-bottom: 28px;"><%=t :pedidos %></h4>
+  <h4 style="margin-left: 369px; margin-top: 28px; margin-bottom: 28px;"><%=t :pedidos %></h4>
 
   <% if @requests.any? %>
       <table class="table tableStatus">
@@ -23,16 +23,15 @@
         <tbody>
         <% @requests.each do |r| %>
             <tr>
-              <%= form_for :request, :url => {:controller => 'request', :action => 'approve', :id => r.id} do |form| %>
+              <%= form_for :request, :url => {:controller => 'request', :action => 'approve', :id => r.id, :page => params[:page]} do |form| %>
                   <td><%= r.address %>,&nbsp;<%= r.number %>&nbsp;/&nbsp;<%= r.complement %></td>
                   <% if r.status == 'A' || r.status == 'R'  %>
                       <td>
-                        <% if !r.price.blank? %>
-                            <%=t :money %>&nbsp;
-                        <% else %>
+                        <% if r.price.blank? %>
                             <%=t :nothing %>
+                        <% else %>
+                            <%= number_to_currency(r.price) %>
                         <% end %>
-                        <%= r.price %>
                       </td>
                       <td><%= r.paymentAsText %></td>
                       <td><%= r.statusAsText %></td>
@@ -46,7 +45,7 @@
                         <%= button_tag type: :submit, class: "btn btn-success" do %>
                             <i class="icon-thumbs-up"></i>
                         <% end %>
-                        <%= link_to options = {:controller => 'request', :action => 'reject', :id => r.id}, html_options = {:class => "btn btn-danger"} do %>
+                        <%= link_to options = {:controller => 'request', :action => 'reject', :id => r.id, :page => params[:page]}, html_options = {:class => "btn btn-danger"} do %>
                             <i class="icon-thumbs-down"></i>
                         <% end %>
                       </td>

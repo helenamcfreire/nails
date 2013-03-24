@@ -8,7 +8,7 @@ class RequestController < ApplicationController
 
     if current_user.is_beauty?
       @requests = Request.all(:order => 'created_at DESC')
-                         .paginate(:page => params[:page], :per_page => 6)
+                         .paginate(:page => params[:page], :per_page => 4)
     else
       @requests = Request.find_all_by_user_id(current_user.id, :order => 'created_at DESC')
                          .paginate(:page => params[:page], :per_page => 6)
@@ -35,16 +35,17 @@ class RequestController < ApplicationController
 
   def approve
     @request = Request.find(params[:id])
-    @request.price = params[:request][:price]
+    @request.price = params[:request][:price].gsub(',', '.')
     @request.payment = params[:request][:payment]
     @request.status = Request::APROVADO
 
     if @request.save
-      redirect_to '/request/list'
+      redirect_to :controller => 'request', :action => 'list', :page => params[:page]
     else
+      flash[:error] = @request.errors.full_messages
       @requests = Request.all(:order => 'created_at DESC')
-                         .paginate(:page => params[:page], :per_page => 6)
-      render 'list'
+                         .paginate(:page => params[:page], :per_page => 4)
+      redirect_to :controller => 'request', :action => 'list', :page => params[:page]
     end
 
   end
@@ -53,13 +54,8 @@ class RequestController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = Request::RECUSADO
 
-    if @request.save
-      redirect_to '/request/list'
-    else
-      @requests = Request.all(:order => 'created_at DESC')
-                         .paginate(:page => params[:page], :per_page => 6)
-      render 'list'
-    end
+    @request.save
+    redirect_to :controller => 'request', :action => 'list', :page => params[:page]
 
   end
 

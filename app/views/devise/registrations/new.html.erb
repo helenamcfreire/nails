@@ -1,31 +1,37 @@
 <div class="divFlores">
 
-  <%= form_for(resource, :as => resource_name, :html => {:class => "form-horizontal"}, :url => registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, :as => resource_name, :html => {:class => "form-horizontal", :id => "formCadastro"}, :url => registration_path(resource_name)) do |f| %>
 
-      <%= devise_error_messages! %>
+      <div class="error-messages">
+        <% if !resource.nil? && resource.errors.any? %>
+            <% resource.errors.full_messages.each do |msg| %>
+                <span class="label label-important"><%= msg %></span>
+            <% end %>
+        <% end %>
+      </div>
+
+      <h4 style="margin-left: 232px;"><%=t :cadastro %></h4>
 
       <div style="margin-top: 23px; width: 401px;">
 
-        <h4 style="margin-left: 232px;"><%=t :cadastro %></h4>
-
         <div class="control-group">
-          <label class="control-label" for="inputSenha"><%=t :nome %>:</label>
+          <label class="control-label" for="firstName"><%=t :nome %>*:</label>
           <div class="controls">
-            <%= f.text_field :firstName, :maxlength => 50 %>
+            <%= f.text_field :firstName, :maxlength => 50, :id => 'firstName' %>
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="inputSenha"><%=t :sobrenome %>:</label>
+          <label class="control-label" for="lastName"><%=t :sobrenome %>*:</label>
           <div class="controls">
-            <%= f.text_field :lastName, :maxlength => 50 %>
+            <%= f.text_field :lastName, :maxlength => 50, :id => 'lastName' %>
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="inputSenha"><%=t :data_nascimento %>:</label>
+          <label class="control-label" for="birth"><%=t :data_nascimento %>*:</label>
           <div class="controls">
-            <%= f.date_select :birth, {:start_year => 1910, :include_blank => true, :order => [:day, :month, :year]}, {:style => "width:71px"} %>
+            <%= f.date_select :birth, {:start_year => 1910, :include_blank => true, :order => [:day, :month, :year]}, {:style => "width:71px", :id => 'birth'} %>
           </div>
         </div>
 
@@ -37,30 +43,30 @@
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="inputSenha"><%=t :celular %>:</label>
+          <label class="control-label" for="phone"><%=t :celular %>*:</label>
           <div class="controls">
-            <%= f.text_field :phone, :maxlength => 15 %>
+            <%= f.text_field :phone, :maxlength => 15, :id => 'phone' %>
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="inputEmail"><%=t :email %>:</label>
+          <label class="control-label" for="email"><%=t :email %>*:</label>
           <div class="controls">
-            <%= f.email_field :email, :autofocus => true %>
+            <%= f.email_field :email, :id => 'email' %>
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="inputSenha"><%=t :senha %>:</label>
+          <label class="control-label" for="password"><%=t :senha %>*:</label>
           <div class="controls">
-            <%= f.password_field :password %>
+            <%= f.password_field :password, :id => 'password' %>
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="inputSenha"><%=t :confirmacao_senha %>:</label>
+          <label class="control-label" for="password_confirmation"><%=t :confirmacao_senha %>*:</label>
           <div class="controls">
-            <%= f.password_field :password_confirmation %>
+            <%= f.password_field :password_confirmation, :id => 'password_confirmation' %>
           </div>
         </div>
 
@@ -77,3 +83,20 @@
   <% end %>
 
 </div>
+
+<script type="text/javascript">
+
+    var metrics = [
+        [ '#firstName', 'presence', '' ],
+        [ '#lastName', 'presence', '' ],
+        [ '#birth', 'presence', '' ],
+        [ '#phone', 'presence', '' ],
+        [ '#email', 'presence', '' ],
+        [ '#password', 'presence', '' ],
+        [ '#password_confirmation', 'presence', '' ],
+        [ '#password_confirmation', 'same-as:#password', '' ],
+    ];
+
+    $("#formCadastro").nod( metrics );
+
+</script>

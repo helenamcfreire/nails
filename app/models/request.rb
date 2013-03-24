@@ -6,7 +6,8 @@ class Request < ActiveRecord::Base
 
   validates :address, :number, :complement, :status, :user_id, :local_id, :presence => true
   validates :price, :payment,   :presence => true, :if => :is_approved?
-  validates_numericality_of :price, :allow_blank => true
+  validates_numericality_of :price, :greater_than => 0, :less_than => 100, :allow_blank => true
+  validates_numericality_of :number, :complement
   validate :has_requests_being_processed?
 
   EM_PROCESSAMENTO = 'P'

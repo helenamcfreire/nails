@@ -2,7 +2,13 @@
 
   <%= form_for(resource, :as => resource_name, :html => {:class => "form-horizontal"}, :url => session_path(resource_name)) do |f| %>
 
-      <%= devise_error_messages! %>
+      <div class="error-messages">
+        <% if !resource.nil? && resource.errors.any? %>
+            <% resource.errors.full_messages.each do |msg| %>
+                <span class="label label-important"><%= msg %></span>
+            <% end %>
+        <% end %>
+      </div>
 
       <div style="margin-top: 110px; width: 400px;">
 

@@ -18,12 +18,11 @@
               <td><%= r.statusAsText %></td>
               <td><%= r.address %>,&nbsp;<%= r.number %>&nbsp;/&nbsp;<%= r.complement %></td>
               <td>
-                <% if !r.price.blank? %>
-                    <%=t :money %>&nbsp;
-                <% else %>
+                <% if r.price.blank? %>
                     <%=t :nothing %>
+                <% else %>
+                    <%= number_to_currency(r.price) %>
                 <% end %>
-                <%= r.price %>
               </td>
               <td><%= r.paymentAsText %></td>
             </tr>

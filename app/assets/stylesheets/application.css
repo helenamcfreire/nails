@@ -68,3 +68,12 @@ img.logo {
     top: 515px;
     left: 270px;
 }
+
+.help-inline {
+    padding-left: 0!important;
+}
+
+.disabled > a {
+    background-color: #f5f5f5!important;
+    color: #999999!important;
+}
